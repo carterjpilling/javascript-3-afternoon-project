@@ -51,8 +51,19 @@ var employees = [
 */
 
 //Code Here
+const employeeUpdater = () => {
 
+  employees.forEach((e, index) => {
+    if (e.firstName === "Theo") {
+      employees.splice(index, 1)
+    } if (e.firstName === "Lorie") {
+      employees[index].department = "HR"
+    }
+  })
+  return employees
+}
 
+// console.log(employeeUpdater(employees))
 
 ////////// PROBLEM 2 //////////
 
@@ -70,8 +81,27 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 //Code Here
 
+// const removeDuplicates = () =>{
+//   workplaceAccidents.forEach((e, index) =>{
+//     if (!workplaceAccidents.includes(e)){
+//       workplaceAccidents.splice(index, 1)
+//     }
+//   })
+//   return workplaceAccidents
+// }
+const removeDuplicates = () =>{
+  for(i = 0; i < workplaceAccidents.length; i++){
+    for(j = i +1; j < workplaceAccidents.length; j++){
+      if(workplaceAccidents[i] === workplaceAccidents[j]){
+        workplaceAccidents.splice(i,1);
+      } 
+    }
+  }
+  return workplaceAccidents
+}
 
-
+  
+// console.log(workplaceAccidents)
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
@@ -81,7 +111,7 @@ var cat = {
     {
       name: 'Grumpy',
       activities: ['be grumpy', 'eat food']
-    }, 
+    },
     {
       name: 'Lazy Bones',
       activities: ['sleep', 'pre-sleep naps']
@@ -97,10 +127,11 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+const grumpyActivity = cat.catFriends[0].activities[1]
+const fluffy2ndFriend = cat.catFriends[1].name
+// var fluffy2ndFriend = 
 
-
+console.log(fluffy2ndFriend)
 
 ////////// PROBLEM 4 //////////
 
@@ -139,18 +170,35 @@ var myCar = {
 */
 
 //Code Here
+let recordCleaner = () => {
+  // myCar.accidents
+  myCar.accidents.forEach((e, index) => {
+    if (e.atFaultForAccident === true){
+      myCar.accidents.splice(index ,1,false)
+    }
+  })
+  return myCar
+}
 
 
+// employees.forEach((e, index) => {
+//   if (e.firstName === "Theo") {
+//     employees.splice(index, 1)
+//   } if (e.firstName === "Lorie") {
+//     employees[index].department = "HR"
+//   }
+// })
+// return employees
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 // Do not edit the code above.
 
 /*
   Above is an array of arrays. Use two for loops.
-    1. Write a function called 'looper'. 
+    1. Write a function called 'looper'.
     2. 'looper' should loop over the arrays.
     3.  If the number is odd, replace it with 'odd'.
         If the number is even, replace it with 'even'.
