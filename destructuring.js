@@ -23,9 +23,19 @@ var carDetails = {
 
 //Code Here
 
+// const {color} = carDetails
+// const {make} = carDetails
+// const {model} = carDetails
+// const {year} = carDetails
+
+const { color } = carDetails
+const { make } = carDetails
+const { model } = carDetails
+const { year } = carDetails
 
 
-////////// PROBLEM 2 //////////
+
+//// PROBLEM 2 //////////
 
 /*
   In the function below named greeting, it is receiving an object as a parameter. 
@@ -33,9 +43,11 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting(obj) {
   //Code Here
-  
+
+  let { firstName, lastName, title } = obj
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -54,6 +66,16 @@ function greeting( obj ) {
 */
 
 //Code Here
+const totalPopulation = (obj) => {
+  let utah = obj.utah
+  let california = obj.california
+  let texas = obj.texas
+  let arizona = obj.arizona
+  return utah + california + texas + arizona
+}
+
+
+
 
 
 
@@ -68,7 +90,14 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+const ingredients = (obj) => {
+  let array = []
+  let carb = obj.carb
+  let fat = obj.fat
+  let protein = obj.protein
+  array.push(carb, fat, protein)
+  return array
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -86,8 +115,9 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
+function largeNumbers({ first, second, third }) {
+  return smallestNumber = Math.min(first, second, third)
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -98,5 +128,14 @@ function greeting( obj ) {
 */
 
 //Code Here
+// let numberGroups = ({a,b,c})=>{
+//   return longestArray = Math.max(a,b,c)
+// }
 
-
+const numberGroups = ({ a, b, c }) => {
+  if (a.length > b.length && a.length > c.length)
+    return a
+  else if (b.length > a.length && b.length > c.length)
+    return b
+  else return c
+}
