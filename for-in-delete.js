@@ -40,7 +40,11 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let text= " "
+  for (var key in obj){
+    text += obj[key] + " ";
+  }
+  return text
 }
 
 
@@ -54,7 +58,14 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+let greaterThan10 = obj =>{
+  for (let key in obj){
+    if(obj[key] > 10){
+      obj[key] = 0
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,8 +77,15 @@ function showValues( obj ) {
 */
 
 //Code Here
+let double = obj => {
+  for (let key in obj){
+    obj[key] = obj[key] * 2
+  }
+  return obj
+}
 
-
+// {one: 1, two: 2, three: 3}
+// {one: 177, two: 2234, three: 23}
 
 ////////// PROBLEM 4 //////////
 
@@ -80,8 +98,18 @@ function showValues( obj ) {
 */
 
 //Code Here
-
-
+let secrets = obj => {
+  let string = " "
+  for (let key in obj){
+    if(key.startsWith('sh')){
+      string += obj[key] + " ";
+    }
+  }
+  return string
+  return console.log(obj)
+}
+// {shhh: "I really", one: "this is no secret", shake: ", really love ", shed: "javascript!", two: "this also does not belong"}
+// for-in-delete.js:109 {sh: "Cheese", sally: "this is no secret", shake: " is", shed: " disgusting :(", sue: "this also does not belong", …}
 
 /* 
   Sometimes it's needed to delete object properties. 
